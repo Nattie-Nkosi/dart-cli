@@ -1,5 +1,4 @@
-import 'package:kingcli_nn/src/option.dart';
-import 'package:kingcli_nn/src/prompter.dart';
+import 'package:kingcli_nn/kingcli_nn.dart';
 
 void main() {
   final options = [
@@ -8,5 +7,11 @@ void main() {
   ];
 
   final prompter = new Prompter();
-  print(prompter.askBinary('Do you like Dart?'));
+
+  String colorCode = prompter.askMultiple('Select a color', options);
+
+  bool answer = prompter.askBinary('Do you like this lib?');
+
+  print(colorCode);
+  print(answer);
 }
